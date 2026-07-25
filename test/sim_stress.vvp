@@ -8,7 +8,7 @@
 :vpi_module "/nix/store/vh3lcg8gq2c3pxbqkqmrk3fmf3papk52-iverilog-12.0/lib/ivl/v2005_math.vpi";
 :vpi_module "/nix/store/vh3lcg8gq2c3pxbqkqmrk3fmf3papk52-iverilog-12.0/lib/ivl/va_math.vpi";
 :vpi_module "/nix/store/vh3lcg8gq2c3pxbqkqmrk3fmf3papk52-iverilog-12.0/lib/ivl/v2009.vpi";
-S_0x1d98aa50 .scope package, "$unit" "$unit" 2 1;
+S_0x1d98aa50 .scope package, "$units" "$units" 2 1;
  .timescale 0 0;
 S_0x1d9896c0 .scope module, "test_stress" "test_stress" 3 3;
  .timescale -9 -12;

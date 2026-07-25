@@ -45,7 +45,7 @@ async def do_operation(dut, op_name, shift_button=0):
 # =======================================================================
 @cocotb.test()
 async def test_alu_basic(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.ena.value = 1
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 5)
@@ -64,7 +64,7 @@ async def test_alu_basic(dut):
 # =======================================================================
 @cocotb.test()
 async def test_advanced_features(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.ena.value = 1
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 2)
@@ -82,7 +82,7 @@ async def test_advanced_features(dut):
 # =======================================================================
 @cocotb.test()
 async def test_overflow_display(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.ena.value = 1
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 2)
@@ -104,7 +104,7 @@ async def test_overflow_display(dut):
 
 @cocotb.test()
 async def test_int_positive(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 100)
     await set_number(dut, 1, 250)
@@ -112,7 +112,7 @@ async def test_int_positive(dut):
 
 @cocotb.test()
 async def test_int_zero(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 0)
     await set_number(dut, 1, 0)
@@ -120,7 +120,7 @@ async def test_int_zero(dut):
 
 @cocotb.test()
 async def test_int_max_boundaries(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 511)
     await set_number(dut, 1, 0)
@@ -128,7 +128,7 @@ async def test_int_max_boundaries(dut):
 
 @cocotb.test()
 async def test_bitwise_xor(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 0b101010101)
     await set_number(dut, 1, 0b010101010)
@@ -136,14 +136,14 @@ async def test_bitwise_xor(dut):
 
 @cocotb.test()
 async def test_shift_right_edge(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 255)
     assert await do_operation(dut, 'ADD', shift_button=1) == 15
 
 @cocotb.test()
 async def test_magnitude_cmp_b_greater(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 12)
     await set_number(dut, 1, 400)
@@ -151,7 +151,7 @@ async def test_magnitude_cmp_b_greater(dut):
 
 @cocotb.test()
 async def test_magnitude_cmp_a_greater(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 350)
     await set_number(dut, 1, 42)
@@ -159,14 +159,14 @@ async def test_magnitude_cmp_a_greater(dut):
 
 @cocotb.test()
 async def test_mirror_complex(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 0b100000001)
     assert await do_operation(dut, 'OR', shift_button=1) == 0b100000001
 
 @cocotb.test()
 async def test_int_large_values(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 450)
     await set_number(dut, 1, 450)
@@ -174,7 +174,7 @@ async def test_int_large_values(dut):
 
 @cocotb.test()
 async def test_float_simulation_1(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 15)
     await set_number(dut, 1, 20)
@@ -182,7 +182,7 @@ async def test_float_simulation_1(dut):
 
 @cocotb.test()
 async def test_float_simulation_2(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 111)
     await set_number(dut, 1, 222)
@@ -190,7 +190,7 @@ async def test_float_simulation_2(dut):
 
 @cocotb.test()
 async def test_float_simulation_max(dut):
-    cocotb.start_soon(Clock(dut.clk, 10, unit="us").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 499)
     await set_number(dut, 1, 500)
