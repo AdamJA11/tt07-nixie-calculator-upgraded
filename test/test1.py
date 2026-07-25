@@ -139,6 +139,7 @@ async def test_shift_right_edge(dut):
     cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 255)
+    await set_number(dut, 1, 0) # <--- Ligne ajoutée pour écraser l'ancienne valeur
     assert await do_operation(dut, 'ADD', shift_button=1) == 15
 
 @cocotb.test()
