@@ -21,4 +21,4 @@ jobs:
           sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
 
       - name: Build docs
-        uses: TinyTapeout/tt-gds-action/docs@tt07
+        uses: TinyTapeout/tt-gds-action/docs@tt07 
