@@ -1,0 +1,143 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*]
+[dumpfile] "tb.vcd"
+[dumpfile_mtime] "0"
+[dumpfile_size] 0
+[savefile] "tb.gtkw"
+[timestart] 0
+[size] 1600 900
+[pos] -1 -1
+*-24.534533 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[treeopen] tb.user_project.
+[treeopen] tb.user_project.keyboardreal.
+[treeopen] tb.user_project.bit_10NTreal.
+[sst_width] 297
+[signals_width] 230
+[sst_expanded] 1
+[sst_vpaned_height] 158
+
+[*]
+[*] Marqueurs — un par test, positionnés sur le premier cycle utile
+[*]
+[marker] 0
+[marker] 530000000
+[marker] 1070000000
+[marker] 1610000000
+[marker] 2150000000
+[marker] 2690000000
+[marker] 3230000000
+[marker] 3830000000
+[marker] 4430000000
+[marker] 5030000000
+[marker] 5630000000
+[marker] 6230000000
+[marker] 6830000000
+[marker] 7430000000
+[marker] 7970000000
+
+[*]
+[*] Noms des marqueurs (labels visibles sur la timeline)
+[*]
+[markername] 0 T01:INT+042/+015
+[markername] 1 T02:INT-010/+007
+[markername] 2 T03:INT-020/-005
+[markername] 3 T04:INT+000/+000
+[markername] 4 T05:INT+999/+001
+[markername] 5 T06:INT+123/+456
+[markername] 6 T07:FLT+003.5/+001.2
+[markername] 7 T08:FLT-002.5/+001.0
+[markername] 8 T09:FLT-004.0/-002.0
+[markername] 9 T10:FLT+009.7/+005.6
+[markername] 10 T11:FLT+008.3/-003.1
+[markername] 11 T12:FLT+025.9/+013.4
+[markername] 12 T13:FLT+125.3/+074.6
+[markername] 13 T14:INT+999/+999
+[markername] 14 T15:FLT+999.9/+000.1
+
+@29
+tb.clk
+@28
+tb.rst_n
+tb.ena
+
+@200
+-═══ Inputs UI ═══
+@22
+tb.ui_in[7:0]
+@28
+tb.uio_in[0]
+
+@200
+-═══ KEYBOARD — Décodage entrées ═══
+@22
+tb.user_project.keyboardreal.pos[1:0]
+@28
+tb.user_project.keyboardreal.modesel
+tb.user_project.keyboardreal.signsel_dispA
+tb.user_project.keyboardreal.positionsel_dispB
+tb.user_project.keyboardreal.numbersel_NOT
+tb.user_project.keyboardreal.decimal_sel
+@22
+tb.user_project.keyboardreal.nibble[3:0]
+
+@200
+-═══ Registre A ═══
+@28
+tb.user_project.keyboardreal.numA_reg[16]
+@22
+tb.user_project.keyboardreal.numA_reg[15:12]
+tb.user_project.keyboardreal.numA_reg[11:8]
+tb.user_project.keyboardreal.numA_reg[7:4]
+tb.user_project.keyboardreal.numA_reg[3:0]
+@28
+tb.user_project.keyboardreal.floatA
+
+@200
+-═══ Registre B ═══
+@28
+tb.user_project.keyboardreal.numB_reg[16]
+@22
+tb.user_project.keyboardreal.numB_reg[15:12]
+tb.user_project.keyboardreal.numB_reg[11:8]
+tb.user_project.keyboardreal.numB_reg[7:4]
+tb.user_project.keyboardreal.numB_reg[3:0]
+@28
+tb.user_project.keyboardreal.floatB
+
+@200
+-═══ Résultat ANS ═══
+@28
+tb.user_project.keyboardreal.ans[16]
+@22
+tb.user_project.keyboardreal.ans[15:12]
+tb.user_project.keyboardreal.ans[11:8]
+tb.user_project.keyboardreal.ans[7:4]
+tb.user_project.keyboardreal.ans[3:0]
+@28
+tb.user_project.keyboardreal.is_float
+tb.user_project.keyboardreal.error
+
+@200
+-═══ BIT_10NT — Nixie Display ═══
+@28
+tb.user_project.bit_10NTreal.blink_on
+tb.user_project.bit_10NTreal.power13
+tb.user_project.bit_10NTreal.power24
+@22
+tb.user_project.bit_10NTreal.display[13:0]
+
+@200
+-═══ Bidirectional Pins ═══
+@22
+tb.user_project.uio_oe[7:0]
+tb.user_project.uio_out[7:0]
+
+@200
+-═══ Output Pins ═══
+@22
+tb.user_project.uo_out[7:0]
+
+[pattern_trace] 1
+[pattern_trace] 0
