@@ -13,7 +13,6 @@ jobs:
         with:
           submodules: recursive
 
-      # Nouvelle étape pour installer Typst avant de générer la doc
       - name: Install Typst
         run: |
           curl -L https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz -o typst.tar.xz
@@ -21,4 +20,4 @@ jobs:
           sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
 
       - name: Build docs
-        uses: TinyTapeout/tt-gds-action/docs@tt07 
+        uses: TinyTapeout/tt-gds-action/docs@tt07
