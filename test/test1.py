@@ -38,7 +38,9 @@ async def do_operation(dut, op_name, shift_button=0):
     dut.ui_in.value = ui_val
     await Timer(1, units="us") 
     
-    return int(dut.user_project.keyboardreal.ans.value) 
+    # CORRECTION : On lit la valeur sur les broches de sortie externes (uo_out)
+    # au lieu de lire un signal interne aplati par la synthèse.
+    return int(dut.uo_out.value) 
 
 # =======================================================================
 # 1. TEST DE L'ALU CLASSIQUE (Existant)
@@ -93,8 +95,12 @@ async def test_overflow_display(dut):
     await do_operation(dut, 'ADD')
     await ClockCycles(dut.clk, 5)
 
-    tube1_E = int(dut.user_project.bit_10NTreal.display.value) >> 7
-    tube3_r = int(dut.user_project.bit_10NTreal.display.value) & 0x7F
+    # CORRECTION : Remplacement des signaux internes par les broches externes
+    # (J'assume que la donnée d'affichage sort sur uo_out. Si c'est sur uio_out, change uo_out par uio_out ici)
+    tube_display = int(dut.uo_out.value)
+    tube1_E = tube_display >> 7
+    tube3_r = tube_display & 0x7F
+    
     assert tube1_E == 0b0110000
     assert tube3_r == 0b1111010
 
@@ -139,7 +145,7 @@ async def test_shift_right_edge(dut):
     cocotb.start_soon(Clock(dut.clk, 10, units="us").start())
     dut.rst_n.value = 1
     await set_number(dut, 0, 255)
-    await set_number(dut, 1, 0) # <--- Ligne ajoutée pour écraser l'ancienne valeur
+    await set_number(dut, 1, 0)
     assert await do_operation(dut, 'ADD', shift_button=1) == 15
 
 @cocotb.test()
