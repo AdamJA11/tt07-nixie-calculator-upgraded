@@ -3,7 +3,7 @@
     "VERILOG_FILES": ["dir::src/modifiedproject.sv"],
     "CLOCK_PORT": "clk",
     "CLOCK_PERIOD": 30,
-    "DIE_AREA": [0, 0, 80, 80],
+    "DIE_AREA": [0, 0, 150, 150],
     "FP_SIZING": "absolute",
     "QUIT_ON_LINTER_ERRORS": false,
     "QUIT_ON_SYNTH_CHECKS": false,
