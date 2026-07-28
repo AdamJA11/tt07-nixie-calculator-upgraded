@@ -12,7 +12,7 @@
     "FP_PDN_HPITCH": 25,
     "FP_PDN_VOFFSET": 5,
     "FP_PDN_HOFFSET": 5,
-    "PL_TARGET_DENSITY_PCT": 60,
+    "PL_TARGET_DENSITY_PCT": 65,
     "GRT_ALLOW_CONGESTION": true,
     "DECAP_CELL": [
         "sky130_fd_sc_hd__decap_3",
